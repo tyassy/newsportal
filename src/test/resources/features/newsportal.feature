@@ -33,7 +33,7 @@ Feature: News Portal
     When User click facebook button in login page
     Then User see facebook login page appears
 
-  Scenario: Verify User can access login via facebook page from register page
+  Scenario: Verify User can access login via google page from register page
     And User click Masuk button
     And User click Daftar Sekarang button
     When User click google button in login page

@@ -23,7 +23,8 @@ After Cucumber + and Cucumber for Java are installed, test cases can be tested f
 If both Cucumber + and Cucumber for Java are unable to be installed for some reasons, test cases can be run also from CucumberRunner by following steps below:
 
 - Open file CucumberRunner
-- Input the desired test case tag in tags section
-- Run CucumberRunner
+- Run CucumberRunner (Tagging @NewsPortal is already there, so it can be executed right away)
 
 After run the test case, test report can be seen in Run tab Intellij, and it is also available html format that can be accessed by clicking the link with prefix reports.cucumber.io/reports link is available in bottom in Run tab after run test.
+
+Test report will look like this url: https://reports.cucumber.io/reports/b1d5974f-7d21-4a5f-ac46-dd19589e2b83 (this is a generated html from August 17, and it will be automatically deleted after 24 hours.)
