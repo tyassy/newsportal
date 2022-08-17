@@ -3,36 +3,35 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
+import pages.RegisterPage;
 
 public class RegisterPageSteps {
 
-  @Then("User see popup notification appears in register page")
-  public void userSeePopupNotificationAppearsInRegisterPage() {
+  RegisterPage registerPage = new RegisterPage();
 
+  @And("User access kumparan register page")
+  public void userAccessKumparanRegisterPage() {
+    registerPage.openRegisterPage();
   }
 
-  @When("User input {string} in email textfield in register page")
-  public void userInputInEmailTextfieldInRegisterPage(String arg0) {
-
+  @Then("User see register button is disabled")
+  public void userSeeRegisterButtonIsDisabled() {
+    Assertions.assertFalse(registerPage.isRegisterBtnEnabled());
   }
 
-  @And("User click register button in register page")
-  public void userClickRegisterButtonInRegisterPage() {
-
+  @And("User input {string} as email in register page")
+  public void userInputAsEmailInRegisterPage(String email) {
+    registerPage.inputEmail(email);
   }
 
-  @Then("User see wording to input email appears in register page")
-  public void userSeeWordingToInputEmailAppearsInRegisterPage() {
-
+  @And("User click register button")
+  public void userClickRegisterButton() {
+    registerPage.clickRegisterBtn();
   }
 
-  @When("User click facebook button in register page")
-  public void userClickFacebookButtonInRegisterPage() {
-
-  }
-
-  @When("User click google button in register page")
-  public void userClickGoogleButtonInRegisterPage() {
-
+  @Then("User see verification popup appears")
+  public void userSeeVerificationPopupAppears() {
+    Assertions.assertTrue(registerPage.isVerifPopupAppear());
   }
 }

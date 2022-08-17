@@ -14,13 +14,8 @@ public class NewsPageSteps {
     Assertions.assertTrue(newsPage.isNewsPageAppear());
   }
 
-  @When("User put comment {string} in news page")
-  public void userPutCommentInNewsPage(String arg0) {
-
-  }
-
-  @Then("User see put comment is succeeded")
-  public void userSeePutCommentIsSucceeded() {
-
+  @When("User click any news in Trending page")
+  public void userClickAnyNewsInTrendingPage() {
+    newsPage.clickNewsInTrending();
   }
 }

@@ -1,49 +1,44 @@
 package steps;
 
-import io.cucumber.java.en.And;
+import Webdriver.WebdriverInit;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
+import pages.LoginPage;
 
 public class LoginPageSteps {
 
-  @And("User login with provided account")
-  public void userLoginWithProvidedAccount() {
+  LoginPage loginPage = new LoginPage();
 
-  }
-
-  @Then("User see login page appears")
-  public void userSeeLoginPageAppears() {
-
-  }
-
-  @And("User see Daftar Sekarang button in login page")
-  public void userSeeDaftarSekarangButton() {
-  }
-
-  @When("User input {string} in email textfield in login page")
-  public void userInputInEmailTextfield(String arg0) {
-  }
-
-  @And("User click register button in login page")
-  public void userClickRegisterButton() {
-  }
-
-  @And("User click Masuk button")
+  @When("User click Masuk button")
   public void userClickMasukButton() {
-
-  }
-
-  @And("User click Masuk button in login page")
-  public void userClickMasukButtonInLoginPage() {
+    loginPage.clickMasukBtn();
   }
 
   @When("User click facebook button in login page")
   public void userClickFacebookButtonInLoginPage() {
-
+    loginPage.clickLoginFbBtn();
   }
 
   @When("User click google button in login page")
   public void userClickGoogleButtonInLoginPage() {
+    loginPage.clickLoginGoogleBtn();
+  }
 
+  @Then("User see facebook login page appears")
+  public void userSeeFacebookLoginPageAppears() {
+    WebdriverInit.moveToAnotherTab();
+    Assertions.assertTrue(loginPage.isFbLoginPageAppear());
+  }
+
+  @Then("User see google login page appears")
+  public void userSeeGoogleLoginPageAppears() {
+    WebdriverInit.moveToAnotherTab();
+    Assertions.assertTrue(loginPage.isGoogleLoginPageAppear());
+  }
+
+  @When("User click Daftar Sekarang button")
+  public void userClickDaftarSekarangButton() {
+    loginPage.clickRegisterBtn();
   }
 }

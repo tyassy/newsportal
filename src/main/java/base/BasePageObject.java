@@ -37,8 +37,6 @@ public class BasePageObject {
     getDriver().get(url);
   }
 
-  public void waitABit(java.lang.Integer seconds){}
-
   public void waitshortly(){
     try{
       Thread.sleep(3000);
@@ -50,14 +48,6 @@ public class BasePageObject {
   public void waitlonger(){
     try{
       Thread.sleep(5000);
-    }catch (Exception e){
-      System.out.println("timeout");
-    }
-  }
-
-  public void waitmoreLonger(){
-    try{
-      Thread.sleep(20000);
     }catch (Exception e){
       System.out.println("timeout");
     }

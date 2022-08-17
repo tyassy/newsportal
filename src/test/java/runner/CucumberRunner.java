@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
     stepNotifications = true,
     features = {"src/test/resources/features"},
     plugin = {"json:build/cucumber.json", "pretty", "html:build/result.html"},
-    tags = "@case2" //put test case tagging here
+    tags = "@NewsPortal" //put test case tagging here
 )
 
 public class CucumberRunner {
